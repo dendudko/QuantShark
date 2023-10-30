@@ -129,9 +129,8 @@ class CityGrid:
             for path in self.paths:
                 arr = []
                 for i in range(len(path) - 1):
-                    for j in range(i, len(path)):
-                        arr.append([path[i][0] + .5, path[i][1] + .5,
-                                    path[i + 1][0] + .5, path[i + 1][1] + .5])
+                    arr.append([path[i][0] + .5, path[i][1] + .5,
+                                path[i + 1][0] + .5, path[i + 1][1] + .5])
                 ab_pairs = np.c_[arr]
                 ab_args = ab_pairs.reshape(-1, 2, 2).swapaxes(1, 2).reshape(-1, 2)
                 ax.plot(*ab_args, c='midnightblue', linewidth='4', marker='o')
